@@ -8,7 +8,9 @@ const methodOverride = require("method-override");
 
 const sequelize = require("./database/conexion.js")
 
-var insertRouter = require('./routes/insertRoutes');
+let insertRouter = require('./routes/insertRoutes');
+
+/* const Certificador = require('./models/Certificador.js') */
 
 var app = express();
 
@@ -60,9 +62,10 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-
-  res.status(err.status || 500);
-  res.render('error');
+  res.status(500).json({
+    status: 500,
+    error: err.message,
+  });
 });
 
 module.exports = app;

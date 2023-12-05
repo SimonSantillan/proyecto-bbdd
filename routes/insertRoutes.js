@@ -5,5 +5,8 @@ var insertController = require('../controllers/insertController');
 
 /* GET home page. */
 
+router.post('/insertWithBody',insertController.insertWithBody)
+router.post('/insertWithQuery',insertController.insertWithQuery)
+
 
 module.exports = router;
