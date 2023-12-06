@@ -11,10 +11,10 @@ const Certificador = sequelize.define(
             autoIncrement: true,
         },
         fecha: {
-            type: DataTypes.DATEONLY
+            type: DataTypes.STRING
         },
         hora: {
-            type: DataTypes.TIME
+            type: DataTypes.STRING
         },
         analista: {
             type: DataTypes.STRING
@@ -26,7 +26,8 @@ const Certificador = sequelize.define(
             type: DataTypes.STRING
         },
         id: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            unique: true
         },
         presentacion_tags_checked: {
             type: DataTypes.STRING
@@ -40,7 +41,6 @@ const Certificador = sequelize.define(
         },
         url_picture: {
             type: DataTypes.STRING,
-            unique: true
         }
     },
     {
